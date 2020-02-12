@@ -1,0 +1,18 @@
+/* User specific styles go here */
+
+
+.droplist {
+    display: flex;
+    justify-content: center;
+    margin: 10%;
+}
+.hero {
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+#pokelist {
+    -webkit-appearance: menulist-button;
+    height: 50px;
+}
