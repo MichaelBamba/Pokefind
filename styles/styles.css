@@ -16,3 +16,18 @@
     -webkit-appearance: menulist-button;
     height: 50px;
 }
+
+.mainbtn {
+    display: flex;
+    justify-content: center;
+}
+
+.information {
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+}
+
+p {
+    font-size: 1.5em;
+}
