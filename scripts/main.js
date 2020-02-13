@@ -1,9 +1,8 @@
 // User specific scripts go here
 
-apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
-pokeListLocation = document.querySelector("#pokelist")
-let pokemon = "bulbasaur"
+const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
 let information = document.querySelector(".information")
+let pokeSearchList = []
 
 function getPokemon(){
     fetch(apiurl, {
@@ -13,23 +12,15 @@ function getPokemon(){
         return response.json()
     })
     .then(data => {
-        
         let pokeList = data.results;
-        
         pokeList.map(function(pokemon){
-            const pokeElement = document.createElement("option")
-            pokeElement.value = (pokemon.name)
-            pokeElement.textContent = (pokemon.name)
-            pokeListLocation.append(pokeElement) 
+        pokeSearchList.push(pokemon.name)
         })
-        
     })
 };
 
 function display(){
-
-    let pokemonSelected = document.querySelector("#pokelist").value
-    
+    let pokemonSelected = document.querySelector("#searchbar").value
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonSelected}`, {
         "method": "GET"
     })
@@ -37,14 +28,12 @@ function display(){
         return response.json()
     })
     .then(data => {
-        
         let abilities = data.abilities
         abilities.map(function(abilities){
             const pokeAbilities = document.createElement("p")
             pokeAbilities.value = (abilities.ability.name)
             pokeAbilities.textContent = (abilities.ability.name)
-            information.append(pokeAbilities) 
-            
+            information.append(pokeAbilities)         
     })
     })};
 
@@ -55,3 +44,7 @@ document.getElementById("primarybtn").addEventListener("click", function(){
 })
 
 getPokemon()
+
+$( "#searchbar" ).autocomplete({
+    source: pokeSearchList
+  });
