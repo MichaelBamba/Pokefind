@@ -3,11 +3,15 @@
 const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
 let information = document.querySelector(".information")
 let pokeSearchList = []
+let pokeSprites = document.querySelector('.pokeSprite')
 
 function getPokemon() {
     fetch(apiurl, {
-
+        "method": "GET"
     })
+        .then(response => {
+            return response.json()
+        })
         .then(data => {
             let pokeList = data.results;
             pokeList.map(function (pokemon) {
@@ -25,6 +29,8 @@ function display() {
             return response.json()
         })
         .then(data => {
+            let sprites = data.sprites.front_default
+            console.log(sprites)
             let abilities = data.abilities
             abilities.map(function (abilities) {
                 const pokeAbilities = document.createElement("p")
@@ -32,6 +38,14 @@ function display() {
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
+
+            // // document.createElement(img)
+            // let pokeSprite = "sprite"
+
+            let pokeSprite = document.createElement('img')
+            pokeSprite.src = sprites
+            pokeSprites.append(pokeSprite)
+            console.log(pokeSprite)
         })
 };
 
