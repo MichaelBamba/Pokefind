@@ -1,15 +1,41 @@
 /* User specific styles go here */
 
 
-.droplist {
-    display: flex;
-    justify-content: center;
-    margin: 10%;
+
+nav {
+    background-color: rgb(204, 0, 0);
+    margin: 0%;
 }
-.hero {
+
+.wrapper {
     margin: 10%;
+    background-color: rgb(204, 0, 0);
+    box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+    padding-bottom: 10%;
+    border-radius: 5px;
+}
+
+#headerlogo {
+ height: auto;
+ width: 20%;
+ 
+}
+
+button:focus, input:focus {
+    outline: none;
+}
+
+.logocontainer {
     display: flex;
     justify-content: center;
+}
+
+.logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    
 }
 
 #pokelist {
@@ -17,7 +43,7 @@
     height: 50px;
 }
 
-.mainbtn {
+.mainsearch {
     display: flex;
     justify-content: center;
 }
@@ -30,4 +56,29 @@
 
 p {
     font-size: 1.5em;
+}
+
+#searchbar {
+    border-radius: 10px 0px 0px 10px;
+    height: 4em;
+    width: 30%;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px black;
+    border-right: none;
+}
+
+#primarybtn {
+    border: 1px solid black;
+    border-radius: 0px 10px 10px 0px;
+    padding: ;
+    background-color: rgb(59, 76, 202);
+    box-shadow: 5px 5px 10px black;
+    border-left: none;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+
+body {
+    background-color: rgb(255, 0, 0);
 }
