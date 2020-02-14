@@ -1,4 +1,4 @@
-// User specific scripts go here
+
 
 const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
 let information = document.querySelector(".information")
@@ -39,14 +39,13 @@ function display() {
                 information.append(pokeAbilities)
             })
 
-            // // document.createElement(img)
-            // let pokeSprite = "sprite"
+         
 
 
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
-            console.log(pokeSprite)
+            
         })
 };
 
