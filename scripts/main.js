@@ -1,10 +1,11 @@
-// User specific scripts go here
+
 
 const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
 let information = document.querySelector(".information")
 let pokeSearchList = []
 let pokeSprites = document.querySelector('.pokeSprite')
 
+Math.floor(Math.random() * pokeSearchList)
 function getPokemon() {
     fetch(apiurl, {
         "method": "GET"
@@ -38,7 +39,14 @@ function display() {
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
-
+            // creates stats list
+            let stats = data.stats
+            stats.map(stat => {
+                const pokeStat = document.createElement('li')
+                pokeStat.value = stat.stat.name
+                pokeStat.textContent = stat.stat.name + ": " + stat.base_stat
+                information.append(pokeStat)
+            })
             // // document.createElement(img)
             // let pokeSprite = "sprite"
 
