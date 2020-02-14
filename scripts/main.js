@@ -42,6 +42,7 @@ function display() {
             // // document.createElement(img)
             // let pokeSprite = "sprite"
 
+
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
@@ -50,7 +51,8 @@ function display() {
 };
 
 document.getElementById("primarybtn").addEventListener("click", function () {
-    document.querySelector(".information").innerHTML = ""
+    document.querySelector(".information").innerHTML = "abilities"
+    document.querySelector(".pokeSprite").innerHTML = ""
     display()
 
 })
