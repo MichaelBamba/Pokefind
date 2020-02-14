@@ -1,6 +1,8 @@
 /* User specific styles go here */
 
-
+body{
+    color: white;
+}
 
 nav {
     background-color: rgb(204, 0, 0);
@@ -47,11 +49,15 @@ button:focus, input:focus {
     display: flex;
     justify-content: center;
 }
-
+.pokeSprite{
+    margin-bottom: 0%;
+    display: block;
+    text-align: center;
+}
 .information {
     display: block;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 0%;
 }
 
 p {
@@ -81,4 +87,9 @@ p {
 
 body {
     background-color: rgb(255, 0, 0);
+}
+
+.github {
+    height: auto;
+    width: 8%;
 }

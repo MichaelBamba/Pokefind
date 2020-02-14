@@ -1,4 +1,4 @@
-// User specific scripts go here
+
 
 <<<<<<< HEAD
 apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
@@ -90,19 +90,20 @@ function getPokemon(){
                 information.append(pokeAbilities)
             })
 
-            // // document.createElement(img)
-            // let pokeSprite = "sprite"
+         
+
 
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
-            console.log(pokeSprite)
+            
         })
 >>>>>>> fdc1ef50b83d1660a35f431c622135eec49499cc
 };
 
 document.getElementById("primarybtn").addEventListener("click", function () {
-    document.querySelector(".information").innerHTML = ""
+    document.querySelector(".information").innerHTML = "abilities"
+    document.querySelector(".pokeSprite").innerHTML = ""
     display()
 
 })
