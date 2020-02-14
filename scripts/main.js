@@ -46,7 +46,7 @@ function display() {
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
-            console.log(pokeSprite)
+
         })
 };
 
