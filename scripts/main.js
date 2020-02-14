@@ -70,3 +70,5 @@ getPokemon()
 $("#searchbar").autocomplete({
     source: pokeSearchList
 });
+
+
