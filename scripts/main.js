@@ -12,6 +12,7 @@ let pokeSearchList = []
 let pokeSprites = document.querySelector('.pokeSprite')
 >>>>>>> fdc1ef50b83d1660a35f431c622135eec49499cc
 
+Math.floor(Math.random() * pokeSearchList)
 function getPokemon() {
     fetch(apiurl, {
     })
@@ -89,14 +90,22 @@ function getPokemon(){
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
-
-         
+            // creates stats list
+            let stats = data.stats
+            stats.map(stat => {
+                const pokeStat = document.createElement('li')
+                pokeStat.value = stat.stat.name
+                pokeStat.textContent = stat.stat.name + ": " + stat.base_stat
+                information.append(pokeStat)
+            })
+            // // document.createElement(img)
+            // let pokeSprite = "sprite"
 
 
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
-            
+            console.log(pokeSprite)
         })
 >>>>>>> fdc1ef50b83d1660a35f431c622135eec49499cc
 };
@@ -113,3 +122,5 @@ getPokemon()
 $("#searchbar").autocomplete({
     source: pokeSearchList
 });
+
+
