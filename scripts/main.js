@@ -61,3 +61,8 @@ getPokemon()
 $("#searchbar").autocomplete({
     source: pokeSearchList
 });
+
+document.querySelector(".github").addEventListener("click", function () {
+    window.location="https://github.com/MichaelBamba/FrontEndProject";
+    
+})
