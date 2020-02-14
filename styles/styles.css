@@ -88,3 +88,8 @@ p {
 body {
     background-color: rgb(255, 0, 0);
 }
+
+.github {
+    height: auto;
+    width: 8%;
+}
