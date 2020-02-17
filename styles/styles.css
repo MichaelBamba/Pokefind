@@ -28,7 +28,11 @@ nav {
 button:focus, input:focus {
     outline: none;
 }
+.ball{
+width:20px;
+height: 20px;
 
+}
 .logocontainer {
     display: flex;
     justify-content: center;
