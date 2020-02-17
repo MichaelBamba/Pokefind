@@ -3,7 +3,9 @@
 const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
 let information = document.querySelector(".information")
 let pokeSearchList = []
-let pokeSprites = document.querySelector('.pokeSprite')
+let pokeSprites = document.querySelector('.pokeimg')
+
+
 
 Math.floor(Math.random() * pokeSearchList)
 function getPokemon() {
@@ -17,9 +19,11 @@ function getPokemon() {
             let pokeList = data.results;
             pokeList.map(function (pokemon) {
                 pokeSearchList.push(pokemon.name)
+                
             })
         })
 };
+
 
 function display() {
     let pokemonSelected = document.querySelector("#searchbar").value
@@ -31,7 +35,6 @@ function display() {
         })
         .then(data => {
             let sprites = data.sprites.front_default
-            console.log(sprites)
             let abilities = data.abilities
             abilities.map(function (abilities) {
                 const pokeAbilities = document.createElement("p")
@@ -39,7 +42,7 @@ function display() {
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
-            // creates stats list
+
             let stats = data.stats
             stats.map(stat => {
                 const pokeStat = document.createElement('li')
@@ -47,9 +50,7 @@ function display() {
                 pokeStat.textContent = stat.stat.name + ": " + stat.base_stat
                 information.append(pokeStat)
             })
-            // // document.createElement(img)
-            // let pokeSprite = "sprite"
-
+         
 
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
@@ -59,10 +60,13 @@ function display() {
 };
 
 document.getElementById("primarybtn").addEventListener("click", function () {
+    let name = document.querySelector("#searchbar").value
+    let capitalName = name.charAt(0).toUpperCase() + name.slice(1)
     document.querySelector(".information").innerHTML = "abilities"
-    document.querySelector(".pokeSprite").innerHTML = ""
+    document.querySelector(".pokeimg").innerHTML = ""
+    document.querySelector("#pokename").innerHTML = capitalName
     display()
-
+    document.querySelector(".pokeSprite").style.visibility = "visible";
 })
 
 getPokemon()
@@ -70,5 +74,6 @@ getPokemon()
 $("#searchbar").autocomplete({
     source: pokeSearchList
 });
+
 
 

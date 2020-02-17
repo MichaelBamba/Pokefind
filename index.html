@@ -11,14 +11,13 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Nunito|Roboto+Slab&display=swap" rel="stylesheet">
 </head>
-<nav class="navbar navbar-light " id="">
-  <a class="navbar-brand" href="#">
-    <img src="/images/logo.png" alt="" id="headerlogo">
-  </a>
-</nav>
-
 <body>
   <div id="page-container">
+    <nav class="navbar navbar-light " id="">
+      <a class="navbar-brand" href="#">
+        <img src="/images/logo.png" alt="" id="headerlogo">
+      </a>
+    </nav>
     <div id="content-wrap">
       <div class="logocontainer">
         <img src="/images/searchimg.png" alt="" class="logo">
@@ -28,7 +27,10 @@
           <input type="text" name="" id="searchbar" class="searchbar" placeholder="Search Pokemon!">
           <button type="button" class="" id="primarybtn">Search</button>
         </div>
-        <div class='pokeSprite'></div>
+        <div class='pokeSprite'>
+          <div class="hidden" id="pokename"></div>
+          <div class="pokeimg"></div>
+        </div>
         <div class="information"></div>
       </div>
     </div>
