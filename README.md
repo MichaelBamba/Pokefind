@@ -4,7 +4,8 @@ A front end web development project that displays various Pokemon information ba
 
 ## Getting Started
 
-Visit the github pages link Here: 
+Visit the github pages link Here: https://michaelbamba.github.io/Pokefind/
+
 Or simply clone the repository, and run the index.html on a server of your choice.
 
 ## Built With
