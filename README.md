@@ -1,4 +1,5 @@
 # PokeFind
+![](example.gif)
 
 A front end web development project that displays various Pokemon information based on the users selection.
 
