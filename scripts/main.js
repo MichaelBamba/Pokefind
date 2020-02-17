@@ -29,7 +29,6 @@ async function getPokemon() {
 function display() {
     let pokemonSelected = document.querySelector("#searchbar").value
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonSelected}`, {
-        "method": "GET"
     })
         .then(response => {
             return response.json()
@@ -37,14 +36,35 @@ function display() {
         .then(data => {
             let sprites = data.sprites.front_default
 
+            let abilitiesHeading = document.createElement('p')
+            abilitiesHeading.value = 'Abilities'
+            abilitiesHeading.textContent = 'Abilities:'
+            information.append(abilitiesHeading)
             let abilities = data.abilities
             abilities.map(function (abilities) {
-                const pokeAbilities = document.createElement("p")
+                const pokeAbilities = document.createElement("li")
                 pokeAbilities.value = (abilities.ability.name)
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
+            // show type
+            let typesHeading = document.createElement('p')
+            typesHeading.value = 'Types'
+            typesHeading.textContent = 'Type(s):'
+            information.append(typesHeading)
+            let type = data.types
+            type.map(type => {
+                const pokeType = document.createElement('li')
+                pokeType.value = type.type.name
+                pokeType.textContent = type.type.name
+                information.append(pokeType)
+            })
 
+            // creates stats list
+            let statsHeading = document.createElement('p')
+            statsHeading.value = 'Stats'
+            statsHeading.textContent = 'Stats:'
+            information.append(statsHeading)
             let stats = data.stats
             stats.map(stat => {
                 const pokeStat = document.createElement('li')
@@ -52,6 +72,7 @@ function display() {
                 pokeStat.textContent = stat.stat.name + ": " + stat.base_stat
                 information.append(pokeStat)
             })
+
 
 
             let pokeSprite = document.createElement('img')
@@ -62,7 +83,7 @@ function display() {
 };
 
 document.getElementById("primarybtn").addEventListener("click", function () {
-    document.querySelector(".information").innerHTML = "abilities"
+    document.querySelector(".information").innerHTML = ""
     document.querySelector(".pokeSprite").innerHTML = ""
     display()
 
@@ -76,17 +97,37 @@ function displayrandom(pokemon) {
             return response.json()
         })
         .then(data => {
-            console.log("What is my data here ", data);
             let sprites = data.sprites.front_default
 
+            let abilitiesHeading = document.createElement('p')
+            abilitiesHeading.value = 'Abilities'
+            abilitiesHeading.textContent = 'Abilities:'
+            information.append(abilitiesHeading)
             let abilities = data.abilities
             abilities.map(function (abilities) {
-                const pokeAbilities = document.createElement("p")
+                const pokeAbilities = document.createElement("li")
                 pokeAbilities.value = (abilities.ability.name)
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
+            // show type
+            let typesHeading = document.createElement('p')
+            typesHeading.value = 'Types'
+            typesHeading.textContent = 'Type(s):'
+            information.append(typesHeading)
+            let type = data.types
+            type.map(type => {
+                const pokeType = document.createElement('li')
+                pokeType.value = type.type.name
+                pokeType.textContent = type.type.name
+                information.append(pokeType)
+            })
 
+            // creates stats list
+            let statsHeading = document.createElement('p')
+            statsHeading.value = 'Stats'
+            statsHeading.textContent = 'Stats:'
+            information.append(statsHeading)
             let stats = data.stats
             stats.map(stat => {
                 const pokeStat = document.createElement('li')
@@ -94,6 +135,7 @@ function displayrandom(pokemon) {
                 pokeStat.textContent = stat.stat.name + ": " + stat.base_stat
                 information.append(pokeStat)
             })
+
 
 
             let pokeSprite = document.createElement('img')
