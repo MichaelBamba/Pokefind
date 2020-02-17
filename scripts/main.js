@@ -3,7 +3,10 @@
 const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=964`
 let information = document.querySelector(".information")
 let pokeSearchList = []
-let pokeSprites = document.querySelector('.pokeSprite')
+let pokeSprites = document.querySelector('.pokeimg')
+
+
+
 
 function updateArrayCallback(pokeList) {
     pokeList.map(function (pokemon) {
@@ -26,6 +29,7 @@ async function getPokemon() {
         })
 };
 
+
 function display() {
     let pokemonSelected = document.querySelector("#searchbar").value
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonSelected}`, {
@@ -47,7 +51,7 @@ function display() {
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
-            // show type
+            
             let typesHeading = document.createElement('p')
             typesHeading.value = 'Types'
             typesHeading.textContent = 'Type(s):'
@@ -60,7 +64,7 @@ function display() {
                 information.append(pokeType)
             })
 
-            // creates stats list
+            
             let statsHeading = document.createElement('p')
             statsHeading.value = 'Stats'
             statsHeading.textContent = 'Stats:'
@@ -83,10 +87,14 @@ function display() {
 };
 
 document.getElementById("primarybtn").addEventListener("click", function () {
+    let name = document.querySelector("#searchbar").value
+    let capitalName = name.charAt(0).toUpperCase() + name.slice(1)
     document.querySelector(".information").innerHTML = ""
-    document.querySelector(".pokeSprite").innerHTML = ""
+    document.querySelector(".pokeimg").innerHTML = ""
+    document.querySelector("#pokename").innerHTML = capitalName
     display()
-
+    document.querySelector(".pokeSprite").style.visibility = "visible";
+    document.querySelector(".information").style.visibility = "visible";
 })
 
 function displayrandom(pokemon) {
@@ -110,7 +118,7 @@ function displayrandom(pokemon) {
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
-            // show type
+            
             let typesHeading = document.createElement('p')
             typesHeading.value = 'Types'
             typesHeading.textContent = 'Type(s):'
@@ -123,7 +131,7 @@ function displayrandom(pokemon) {
                 information.append(pokeType)
             })
 
-            // creates stats list
+            
             let statsHeading = document.createElement('p')
             statsHeading.value = 'Stats'
             statsHeading.textContent = 'Stats:'
@@ -142,26 +150,43 @@ function displayrandom(pokemon) {
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
 
+            document.querySelector("#searchbar").value = pokemon
+            let name = document.querySelector("#searchbar").value
+            let capitalName = name.charAt(0).toUpperCase() + name.slice(1)
+            document.querySelector("#pokename").innerHTML = capitalName
+
+          
+
+
+
+            
+
         })
 };
 
 function randomPokes() {
-    getPokemon().then(function () {
+    
         let RNG = (Math.floor(Math.random() * Math.floor(964)));
         let pokemongrandom = pokeSearchList[RNG]
-        console.log(pokemongrandom)
         displayrandom(pokemongrandom);
     }
-    );
-}
 
 
-document.querySelector('.randomButton').addEventListener('click', function () {
+document.querySelector('.ball').addEventListener('click', function () {
     document.querySelector(".information").innerHTML = ""
-    document.querySelector(".pokeSprite").innerHTML = ""
+    document.querySelector(".pokeimg").innerHTML = ""
+    document.querySelector(".pokeSprite").style.visibility = "visible";
+    document.querySelector(".information").style.visibility = "visible";
     randomPokes();
+    
+    
 });
 
+function setName(){
+    
+}
+
+getPokemon()
 
 $("#searchbar").autocomplete({
     source: pokeSearchList
