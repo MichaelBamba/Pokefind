@@ -1,6 +1,6 @@
 # PokeFind
 
-A front end web development project that displays various information based on the users selection.
+A front end web development project that displays various Pokemon information based on the users selection.
 
 ## Getting Started
 
