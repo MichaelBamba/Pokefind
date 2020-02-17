@@ -1,11 +1,12 @@
 
 
-const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=900`
+const apiurl = `https://pokeapi.co/api/v2/pokemon/?limit=964`
 let information = document.querySelector(".information")
 let pokeSearchList = []
 let pokeSprites = document.querySelector('.pokeSprite')
 
-Math.floor(Math.random() * pokeSearchList)
+
+
 function getPokemon() {
     fetch(apiurl, {
         "method": "GET"
@@ -18,6 +19,7 @@ function getPokemon() {
             pokeList.map(function (pokemon) {
                 pokeSearchList.push(pokemon.name)
             })
+
         })
 };
 
@@ -39,7 +41,7 @@ function display() {
                 pokeAbilities.textContent = (abilities.ability.name)
                 information.append(pokeAbilities)
             })
-            // creates stats list
+
             let stats = data.stats
             stats.map(stat => {
                 const pokeStat = document.createElement('li')
@@ -47,14 +49,12 @@ function display() {
                 pokeStat.textContent = stat.stat.name + ": " + stat.base_stat
                 information.append(pokeStat)
             })
-            // // document.createElement(img)
-            // let pokeSprite = "sprite"
 
 
             let pokeSprite = document.createElement('img')
             pokeSprite.src = sprites
             pokeSprites.append(pokeSprite)
-            console.log(pokeSprite)
+
         })
 };
 
@@ -64,11 +64,19 @@ document.getElementById("primarybtn").addEventListener("click", function () {
     display()
 
 })
-
+console.log(pokeSearchList.length)
+console.log(pokeSearchList)
 getPokemon()
+function randomPokes() {
+
+    let RNG = (Math.floor(Math.random() * Math.floor(899)));
+    console.log(RNG)
+}
+document.querySelector('.randomButton').addEventListener('click', randomPokes())
+
+
+randomPokes()
 
 $("#searchbar").autocomplete({
     source: pokeSearchList
 });
-
-
