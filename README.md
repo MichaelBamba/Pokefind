@@ -1,4 +1,4 @@
-<center># PokeFind</center>
+# PokeFind
 <video src="example.gif" alt="" width="200"/>
 
 A front end web development project that displays various Pokemon information based on the users selection.
