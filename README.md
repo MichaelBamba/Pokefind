@@ -1,5 +1,5 @@
 # PokeFind
-<video src="example.gif" alt="" width="200"/>
+<img src="https://media.giphy.com/media/RfSysWsiNtMe27kKAE/giphy.gif" width="40" height="40" />
 
 A front end web development project that displays various Pokemon information based on the users selection.
 
