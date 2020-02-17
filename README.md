@@ -1,5 +1,5 @@
 <center># PokeFind</center>
-<video src="drawing.jpg" alt="drawing" width="200"/>
+<video src="example.gif" alt="" width="200"/>
 
 A front end web development project that displays various Pokemon information based on the users selection.
 
