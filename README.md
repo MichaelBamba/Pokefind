@@ -16,7 +16,7 @@ Or simply clone the repository, and run the index.html on a server of your choic
 * [Bootstrap](https://getbootstrap.com/) - The web framework used
 * [jQuery](https://jquery.com/) - Javascript library
 * [jQuery UI](https://jqueryui.com/) - Autocomplete dependency
-* [jQuery UI](https://pokeapi.co/) - Pokemon API
+* [PokéAPI](https://pokeapi.co/) - Pokemon API
 
 
 ## Authors
